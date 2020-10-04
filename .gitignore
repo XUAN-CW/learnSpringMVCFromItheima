@@ -1,4 +1,3 @@
 target/
 *.class
-libraries/
-artifacts/
+.idea/
