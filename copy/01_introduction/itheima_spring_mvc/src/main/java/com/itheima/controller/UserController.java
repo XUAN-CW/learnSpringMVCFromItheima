@@ -10,6 +10,6 @@ public class UserController {
     @RequestMapping(value="/quick")
     public String save(){
         System.out.println("Controller save running....");
-        return "success";
+        return "/jsp/success.jsp";
     }
 }
