@@ -8,6 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TargetController {
 
+    // http://localhost:8080/target
+    // http://localhost:8080/target?param=yes
     @RequestMapping("/target")
     public ModelAndView show(){
         System.out.println("目标资源执行......");
