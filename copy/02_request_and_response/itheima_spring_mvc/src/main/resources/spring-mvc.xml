@@ -21,20 +21,20 @@
     </bean>
 
     <!--配置处理器映射器-->
-    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>
                 <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
             </list>
         </property>
-    </bean>-->
+    </bean>
 
     <!--mvc的注解驱动-->
     <mvc:annotation-driven conversion-service="conversionService"/>
 
     <!--开发资源的访问-->
-    <!--<mvc:resources mapping="/js/**" location="/js/"/>
-    <mvc:resources mapping="/img/**" location="/img/"/>-->
+    <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:resources mapping="/img/**" location="/img/"/>
 
     <mvc:default-servlet-handler/>
 

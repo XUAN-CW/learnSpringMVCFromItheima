@@ -22,40 +22,44 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
+    // http://localhost:8080/upload.jsp
     @RequestMapping(value="/quick23")
     @ResponseBody
     public void save23(String username, MultipartFile[] uploadFile) throws IOException {
         System.out.println(username);
         for (MultipartFile multipartFile : uploadFile) {
             String originalFilename = multipartFile.getOriginalFilename();
-            multipartFile.transferTo(new File("C:\\upload\\"+originalFilename));
+            multipartFile.transferTo(new File("C:\\Users\\86188\\Desktop\\"+originalFilename));
         }
     }
 
+    // http://localhost:8080/upload.jsp
     @RequestMapping(value="/quick22")
     @ResponseBody
     public void save22(String username, MultipartFile uploadFile,MultipartFile uploadFile2) throws IOException {
         System.out.println(username);
         //获得上传文件的名称
         String originalFilename = uploadFile.getOriginalFilename();
-        uploadFile.transferTo(new File("C:\\upload\\"+originalFilename));
+        uploadFile.transferTo(new File("C:\\Users\\86188\\Desktop\\"+originalFilename));
         String originalFilename2 = uploadFile2.getOriginalFilename();
-        uploadFile2.transferTo(new File("C:\\upload\\"+originalFilename2));
+        uploadFile2.transferTo(new File("C:\\Users\\86188\\Desktop\\"+originalFilename2));
     }
 
+    // http://localhost:8080/user/quick21
     @RequestMapping(value="/quick21")
     @ResponseBody
     public void save21(@CookieValue(value = "JSESSIONID") String jsessionId) throws IOException {
         System.out.println(jsessionId);
     }
 
+    // http://localhost:8080/user/quick20
     @RequestMapping(value="/quick20")
     @ResponseBody
     public void save20(@RequestHeader(value = "User-Agent",required = false) String user_agent) throws IOException {
         System.out.println(user_agent);
     }
 
-
+    // http://localhost:8080/user/quick19
     @RequestMapping(value="/quick19")
     @ResponseBody
     public void save19(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException {
@@ -64,38 +68,48 @@ public class UserController {
         System.out.println(session);
     }
 
+    // http://localhost:8080/user/quick18?date=2020/12/25
+    // http://localhost:8080/user/quick18?date=2020-12-25 这个失败了
     @RequestMapping(value="/quick18")
     @ResponseBody
     public void save18(Date date) throws IOException {
         System.out.println(date);
     }
 
-    // localhost:8080/user/quick17/zhangsan
+    // http://localhost:8080/user/quick17/zhangsan
     @RequestMapping(value="/quick17/{name}")
     @ResponseBody
     public void save17(@PathVariable(value="name") String username) throws IOException {
         System.out.println(username);
     }
 
+    // http://localhost:8080/user/quick16?name=zhang
+    // http://localhost:8080/user/quick16
     @RequestMapping(value="/quick16")
     @ResponseBody
     public void save16(@RequestParam(value="name",required = false,defaultValue = "itcast") String username) throws IOException {
         System.out.println(username);
     }
 
+    //记得配置开发资源的访问、jquery-3.3.1.js
+    // http://localhost:8080/ajax.jsp
     @RequestMapping(value="/quick15")
     @ResponseBody
     public void save15(@RequestBody List<User> userList) throws IOException {
         System.out.println(userList);
     }
 
+    // VO - ViewObject
+    // http://localhost:8080/form.jsp
+    //这里（获得集合类型参数）失败了，以后再研究
     @RequestMapping(value="/quick14")
     @ResponseBody
     public void save14(VO vo) throws IOException {
         System.out.println(vo);
     }
 
-
+    //名称一致，封装到数组
+    //http://localhost:8080/user/quick13?strs=z&strs=c
     @RequestMapping(value="/quick13")
     @ResponseBody
     public void save13(String[] strs) throws IOException {
