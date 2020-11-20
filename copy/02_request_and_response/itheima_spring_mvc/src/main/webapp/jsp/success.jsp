@@ -4,6 +4,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Success! ${username}</h1>
+    <h5>${username}</h5>
+
+    <h5>平均余额:${remaining}</h5>
+    <h5>小:${min}</h5>
+    <h5>大:${max}</h5>
+
 </body>
 </html>
